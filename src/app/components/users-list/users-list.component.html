@@ -1,0 +1,9 @@
+<button data-testid="fetch-users" (click)="fetchUsers()">Fetch users</button>
+
+<span data-testid="request-loading" *ngIf="loading">Loading...</span>
+<span data-testid="request-error" *ngIf="error && !loading">Request failed</span>
+<ul data-testid="users-list" *ngIf="!loading && !error && users.length">
+  <li *ngFor="let user of users">
+    {{ user.name }}
+  </li>
+</ul>
