@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { UsersService } from 'src/app/services/users.service';
+
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
-  styleUrls: ['./users-list.component.scss']
+  styleUrls: ['./users-list.component.scss'],
 })
 export class UsersListComponent {
   users = [];
@@ -13,11 +14,11 @@ export class UsersListComponent {
 
   constructor(private usersService: UsersService) {}
 
-  fetchUsers() {
+  fetchUsers(): void {
     this.loading = true;
 
     this.usersService.get().subscribe({
-      next: users => {
+      next: (users) => {
         this.users = users;
         this.error = false;
         this.loading = false;
@@ -25,7 +26,7 @@ export class UsersListComponent {
       error: () => {
         this.error = true;
         this.loading = false;
-      }
+      },
     });
   }
 }

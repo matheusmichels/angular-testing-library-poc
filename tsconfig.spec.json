@@ -5,7 +5,7 @@
     "types": ["jest", "node"],
     "target": "ES2019",
     "esModuleInterop": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": true
   },
   "files": ["src/polyfills.ts"],
   "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]

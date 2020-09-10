@@ -11,8 +11,7 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
       imports: [RouterTestingModule],
-    })
-    .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

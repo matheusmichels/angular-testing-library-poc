@@ -12,7 +12,7 @@ describe('UsersListComponent', () => {
       imports: [HttpClientModule],
     });
 
-    console.log(screen.debug());
+    screen.debug();
   });
 
   describe('Fetch Users', () => {
@@ -32,10 +32,7 @@ describe('UsersListComponent', () => {
 
     it('should fail users request', async () => {
       server.use(
-        rest.get(
-          'https://jsonplaceholder.typicode.com/users',
-          (_req, res, ctx) => res(ctx.status(500)),
-        ),
+        rest.get('https://jsonplaceholder.typicode.com/users', (_req, res, ctx) => res(ctx.status(500)))
       );
 
       await render(UsersListComponent, {
